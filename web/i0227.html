@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="renderer" content="webkit" />
+  <link href="../css/index.css" rel="stylesheet" />
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <link href="../layer/theme/layer.css" rel="stylesheet" />
+  <script src="../layer/layer.js"></script>
+  <link rel="stylesheet" href="http://yiqianaa.gitee.io/xxx-platform/layer/theme/default/layer.css?v=3.1.1" id="layuicss-layer">
+  <title>闽南师范大学-疫情防控管理平台</title>
+  <script type="text/javascript">
+    /*解决苹果返回不刷新问题*/
+    $(function () {
+      var isPageHide = false;
+      window.addEventListener('pageshow', function () {
+        if (isPageHide) {
+          window.location.reload();
+        }
+      });
+      window.addEventListener('pagehide', function () {
+        isPageHide = true;
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="logo">
+      <img src="../img/logo.png?raw=true" />
+    </div>
+    <div class="container">
+      <div class="pad">
+        <div class="infos">
+          <p class="title">进出场地监控卡</p>
+          <!-- <p class="info">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：{{name}}</p> -->
+          <p class="info">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：黄德发</p>
+          <!-- <p class="info">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：{{num}}</p> -->
+          <p class="info">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：1705120227</p>
+          <p class="info">所属学院：物理与信息工程学院</p>
+
+          <p class="info">场地名称：校门</p>
+          <!-- <p class="info">进出类型：{{type}}</p> -->
+          <p class="info">进出类型：进</p>
+          <p class="info">扫描时间：<span id="sus"></span></p>
+        </div>
+        <div class="codebox">
+          <div class="codeimg">
+            <img src="../img/q0227.png?raw=true" />
+          </div>
+          <div class="lb"></div>
+          <div class="rb"></div>
+        </div>
+      </div>
+    </div>
+    <link href="../css/MonitoringCard.css" rel="stylesheet" />
+    <link href="../css/menustyle.css" rel="stylesheet" />
+    <script src="../js/menu.js"></script>
+    <div id="cd-nav" class="is-fixed">
+      <a href="javascript:void(0)" class="cd-nav-trigger"><span></span></a>
+      <nav id="cd-main-nav">
+        <ul>
+          <li>
+            <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/ChooseSys">
+              <img src="../img/icon1.png?raw=true" /> 返回首页
+            </a>
+          </li>
+          <li>
+            <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/Logout">
+              <img src="../img/icon3.png?raw=true" /> 安全退出
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  
+  <script src="../js/vue.js"></script>
+  <script>
+    $(() => {
+      var susdate = currentTime();
+
+      function currentTime() {
+        var d = new Date(), str = '';
+        str += d.getFullYear() + '.';
+        str += d.getMonth() + 1 + '.';
+        str += d.getDate() + ' ';
+        str += d.getHours() + ':';
+        let fenzhong = d.getMinutes() + '';
+        if (fenzhong.length == 1) {
+          str += '0' + d.getMinutes() + '';
+        } else {
+          str += d.getMinutes() + '';
+        }
+
+        return str;
+      }
+      $('#sus').html(currentTime);
+
+
+    })
+    
+//    const name = prompt("姓名", '');
+//    const num = prompt("学号", '');
+//    const type = prompt("进出", '');
+//    let app = new Vue({
+//      el: '#app',
+//      data: {
+//        message: 'hello',
+//        name: name,
+//        num: num,
+//        type: type
+//    }
+//    });
+    
+  </script> 
+</body>
+
+</html>
+<!--第二版-->
